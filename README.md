@@ -103,3 +103,54 @@ local name = 'Exemplo Scrollbar'
 
 destroyScroll (name) -- Caso não especifique nenhum id, a função destruirá todas as scrollbars.
 ```
+
+## getScroll
+
+```lua
+bool getScroll (id)
+```
+
+- [string](https://wiki.multitheftauto.com/wiki/String) `id`: Nome / Identificador da scrollbar.
+
+### Exemplo
+
+```lua
+local name = 'Exemplo Scrollbar'
+
+getScroll (name) -- Ouput : 0 ou a posição atual da lista.
+```
+
+## setScroll
+
+```lua
+bool setScroll (id, value)
+```
+
+- [string](https://wiki.multitheftauto.com/wiki/String) `id`: Nome / Identificador da scrollbar.
+- [int](https://wiki.multitheftauto.com/wiki/Int) `value`: Valor de atualização da scrollbar.
+
+### Exemplo
+
+```lua
+local name = 'Exemplo Scrollbar'
+
+setScroll (name, 1) -- Define a posição da lista na scroll.
+
+## animScroll
+
+```lua
+bool animScroll (id, start, final, tick)
+```
+
+- [string](https://wiki.multitheftauto.com/wiki/String) `id`: Nome / Identificador da scrollbar.
+- [int](https://wiki.multitheftauto.com/wiki/Int) `start`: Valor de inicio da animação.
+- [int](https://wiki.multitheftauto.com/wiki/Int) `final`: Valor final da animação.
+- [int](https://wiki.multitheftauto.com/wiki/Int) `tick`: Tick atual da animação (getTickCount).
+
+### Exemplo
+
+```lua
+local name = 'Exemplo Scrollbar'
+
+animScroll (name, 1, 0, getTickCount ())
+```
