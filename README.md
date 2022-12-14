@@ -2,7 +2,7 @@
 API de Scrollbar interativa em sua versão 2.0.
 
 ## Exemplos / Demonstração
-![Exemplos / Demonstração](//imgur.com/a/j1gINpS)
+![Preview](https://github.com/ThigasDevelopment/scrollbar-v2/blob/main/preview_scroll.gif)
 
 ## Códigos úteis necessários :
 ```lua
