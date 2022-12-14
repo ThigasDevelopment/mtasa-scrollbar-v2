@@ -135,6 +135,7 @@ bool setScroll (id, value)
 local name = 'Exemplo Scrollbar'
 
 setScroll (name, 1) -- Define a posição da lista na scroll.
+```
 
 ## animScroll
 
@@ -153,4 +154,28 @@ bool animScroll (id, start, final, tick)
 local name = 'Exemplo Scrollbar'
 
 animScroll (name, 1, 0, getTickCount ())
+```
+
+## setScrollValues
+
+```lua
+bool setScrollValues (id, values)
+```
+
+- [string](https://wiki.multitheftauto.com/wiki/String) `id`: Nome / Identificador da scrollbar.
+- [table](https://wiki.multitheftauto.com/wiki/Table) `values`: Tabela de itens da scrollbar.
+
+### Exemplo
+
+```lua
+local name = 'Exemplo Scrollbar'
+
+local itens = {
+    'Teste';
+    'Teste';
+    'Teste';
+    'Teste';
+}
+
+setScrollValues (name, itens) -- Define a posição da lista na scroll.
 ```
