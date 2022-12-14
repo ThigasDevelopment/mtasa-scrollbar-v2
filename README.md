@@ -35,6 +35,11 @@ end
     ```xml
     <script src = 'scrollbar.lua' type = 'client' cache = 'false'/>
     ```
+- Exemplo de como utilizar
+    ```lua
+    
+    ```
+
 # Funções
 
 ## createScroll
