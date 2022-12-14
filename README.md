@@ -86,3 +86,20 @@ createScroll (
     visible,
     false
 )
+```
+
+## destroyScroll
+
+```lua
+bool destroyScroll ([id])
+```
+
+- [string](https://wiki.multitheftauto.com/wiki/String) `id`: Nome / Identificador da scrollbar.
+
+### Exemplo
+
+```lua
+local name = 'Exemplo Scrollbar'
+
+destroyScroll (name) -- Caso não especifique nenhum id, a função destruirá todas as scrollbars.
+```
