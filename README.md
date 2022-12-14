@@ -2,6 +2,7 @@
 API de Scrollbar interativa em sua versão 2.0.
 
 ## Exemplos / Demonstração
+![Exemplos / Demonstração](//imgur.com/a/j1gINpS)
 
 ## Códigos úteis necessários :
 ```lua
