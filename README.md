@@ -37,7 +37,36 @@ end
     ```
 - Exemplo de como utilizar
     ```lua
+    local visible = 5
+
+    local itens = {
+        'Texto';
+        'Texto';
+        'Texto';
+        'Texto';
+        'Texto';
+        'Texto';
+        'Texto';
+        'Texto';
+        'Texto';
+        'Texto';
+        'Texto';
+        'Texto';
+    }
     
+    createScroll ('Testando', {x = 500, y = 500, width = 10, height = 150, size = 35}, {background = {41, 41, 41, 255}, using = {227, 146, 50, 255}, scroll = {73, 73, 73, 255}}, false, function () return true end, 1, itens, visible, false)
+    
+    addEventHandler ('onClientRender', root, function ()
+        local data = getScroll ('Testando')
+        
+        for i = 1, visible do
+            local values = itens[i + data]
+            
+            if values then
+                dxDrawText (values..' '..(i + data), 520, 500, 50, 30, tocolor (255, 255, 255, 255), 1, 'default', 'left', 'top')
+            end
+        end
+    end)
     ```
 
 # Funções
