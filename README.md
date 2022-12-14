@@ -58,12 +58,12 @@ end
     
     addEventHandler ('onClientRender', root, function ()
         local data = getScroll ('Testando')
-        
+
         for i = 1, visible do
             local values = itens[i + data]
-            
+
             if values then
-                dxDrawText (values..' '..(i + data), 520, 500, 50, 30, tocolor (255, 255, 255, 255), 1, 'default', 'left', 'top')
+                dxDrawText (values..' '..(i + data), 520, (500 - 30) + (i * 30), 50, 30, tocolor (255, 255, 255, 255), 1, 'default', 'left', 'top')
             end
         end
     end)
