@@ -144,7 +144,7 @@ function updateScroll (button)
 
         data.actual = data.actual - data.update
 
-        setScroll (id, data.actual)
+        setScroll (id)
 
         return true
     end
@@ -156,7 +156,7 @@ function updateScroll (button)
 
         data.actual = data.actual + data.update
 
-        setScroll (id, data.actual)
+        setScroll (id)
 
         return true
     end
@@ -285,10 +285,12 @@ function setScroll (id, value)
     local data = scrollbar.elements[id]
 
     if value then
-        data.actual = (value < 0 and 0 or value >= (#data.values - data.visible) and  (#data.values - data.visible) or value)
+        data.actual = (value <= 0 and 0 or value >= (#data.values - data.visible) and (#data.values - data.visible) or value)
     end
 
-    data.position.offset = ((data.position.y + ((data.position.height - data.position.size) / (#data.values - data.visible)) * data.actual) >= (data.position.y + data.position.height - data.position.size) and (data.position.y + data.position.height - data.position.size) or (data.position.y + ((data.position.height - data.position.size) / (#data.values - data.visible)) * data.actual))
+    local offset = (data.actual <= 0 and data.position.y or ((data.position.y + ((data.position.height - data.position.size) / (#data.values - data.visible)) * data.actual) >= (data.position.y + data.position.height - data.position.size) and (data.position.y + data.position.height - data.position.size) or (data.position.y + ((data.position.height - data.position.size) / (#data.values - data.visible)) * data.actual)))
+
+    data.position.offset = offset
 
     return true
 end
