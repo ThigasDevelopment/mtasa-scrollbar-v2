@@ -174,7 +174,7 @@ setScroll (name, 1) -- Define a posição da lista na scroll.
 ## animScroll
 
 ```lua
-bool animScroll (id, start, final, tick)
+bool animScroll ([id], start, final, tick)
 ```
 
 - [string](https://wiki.multitheftauto.com/wiki/String) `id`: Nome / Identificador da scrollbar.
@@ -187,7 +187,7 @@ bool animScroll (id, start, final, tick)
 ```lua
 local name = 'Exemplo Scrollbar'
 
-animScroll (name, 1, 0, getTickCount ())
+animScroll (name, 1, 0, getTickCount ()) -- Caso não especifique nenhum id, a função irá executar a animação em todas as scrollbars.
 ```
 
 ## setScrollValues
