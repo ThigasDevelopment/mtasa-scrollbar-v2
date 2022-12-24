@@ -53,8 +53,10 @@ function drawScroll ()
             local cursor = Vector2 (getCursorPosition ())
             local cursory = (cursor.y * screen.y)
 
+            local actual = math.ceil ((data.position.offset - y) * ((#data.values - data.visible) / data.update) / (height - size)) * data.update
+
             data.position.offset = (cursory <= y and y or cursory >= total and total or cursory)
-            data.actual = (data.position.offset <= y and 0 or math.ceil ((data.position.offset - y) * ((#data.values - data.visible) / data.update) / (height - size)) * data.update)
+            data.actual = (data.position.offset <= y and 0 or actual >= (#data.values - data.visible) and (#data.values - data.visible) or actual)
         end
 
         if isCursorOnElement (x, data.position.offset, width, data.position.size) then
